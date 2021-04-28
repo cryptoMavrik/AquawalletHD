@@ -1,4 +1,4 @@
-# aquawalletHD
+# AquawalletHD
 
 Picking back up the development of :https://github.com/aquachain/aquachain-kv/
 Its new home will be here.

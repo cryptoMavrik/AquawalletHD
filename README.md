@@ -13,6 +13,7 @@ AQUAWALLETHD is simple GUI wallet solution for Aquachain with HD wallet support 
 - Unzip to a location of you choice
 - Run AquawalletHD.exe
 ___
+___
 
 # Known Issues
 

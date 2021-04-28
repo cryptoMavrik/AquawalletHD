@@ -9,17 +9,3 @@ _____
 ________
 
 AQUAWALLETHD is simple GUI wallet solution for Aquachain with HD wallet support and built in blockchain explorer.
-
-Installation:
-
-```
-sudo apt-get install xclip xsel python3-pip
-```
-
-```
-
-make deps
-make install
-make
-
-```

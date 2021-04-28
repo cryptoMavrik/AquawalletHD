@@ -2,7 +2,7 @@ import json
 import datetime
 import os
 import errno
-from aquachain.bip44 import HDPrivateKey, HDKey
+from data.crypto.bip44 import HDPrivateKey, HDKey
 import logging
 log = logging.Logger("AQUA", level=logging.DEBUG)
 
@@ -16,16 +16,14 @@ def mkdir_if_not_exist(path):
             raise
 
 def default_keystore_dir():
-    return os.path.expanduser('~/.aquachain/aquakeys/')
+    return os.path.expanduser('data/aquakeys')
 
 class Keystore(object):
     def __init__(self, directory='', hdpath="m/44'/60'/0'/0"):
         if directory == '':
             log.info("no directory found, looking in default place: %s",
                      default_keystore_dir())
-
             directory = default_keystore_dir()
-
         self.hdpath = hdpath
         self.directory = directory
         log.info("keystore dir: %s", self.directory)
@@ -54,18 +52,17 @@ class Keystore(object):
                     else:
                         log.error("invalid key found: %s", file_abs)
                         continue
-        return keys
+            return keys
 
     def from_parent_key(self, key, i):
         return HDPrivateKey.from_parent(key, i)
 
     def save_phrase(self, phrase):
         mkdir_if_not_exist(self.directory)
-        now = datetime.datetime.now()
-        nowstr = now.strftime("%s") + str(now.microsecond)
-        filename = 'aqua' + nowstr + '.wallet'
+        now = str(datetime.datetime.now())
+        nowz= now[:13] + str(datetime.datetime.now().microsecond)
+        filename = 'aqua' + nowz + '.wallet'
         abs = os.path.join(self.directory, filename)
-
         dat = {
             "poem": phrase,
             "version": 1,
@@ -77,14 +74,14 @@ class Keystore(object):
             file.write(data)
         return abs
 
-    def load_phrases(self, phrases, password):
+    def load_phrases(self, phrases):
         keyset = []
         for phrase in phrases:
-            keyset.append(self.load_phrase(phrase, password))
+            keyset.append(self.load_phrase(phrase))
         return keyset
 
-    def load_phrase(self, phrase, password):
-        return HDKey.from_path(HDPrivateKey.master_key_from_mnemonic(phrase, password), self.hdpath)[-1]
+    def load_phrase(self, phrase):
+        return HDKey.from_path(HDPrivateKey.master_key_from_mnemonic(phrase), self.hdpath)[-1]
 
 
 

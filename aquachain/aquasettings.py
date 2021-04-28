@@ -5,12 +5,6 @@ settings_json = json.dumps([
     {'type': 'title',
         'title': 'Settings'},
     {'type': 'options',
-        'title': 'Theme',
-        'desc': 'Alternates between Light and Dark UI themes.',
-        'section': 'Aquachain',
-        'key': 'Theme',
-        'options': ['Dark', 'Light']},
-    {'type': 'options',
         'title': 'Type of currency',
         'desc': 'Please select your local currency',
         'section': 'Aquachain',
@@ -48,12 +42,12 @@ settings_json = json.dumps([
 
 default_settings = {
     'currency': 'USD',
-    'rpchost': 'http://localhost:8543',
-    'ipcpath': '~/.aquachain/aquachain.ipc',
-    'keystore': '~/.aquachain/aquakeys',
+    'rpchost': 'https://c.onical.org',
+    'ipcpath': '',
+    'keystore': 'data/aquakeys',
     'Theme': 'Dark',
     'fuelprice': '0.1',
-    'blocklimit': '10',
-    'noderefresh': '4',
+    'blocklimit': '25',
+    'noderefresh': '10',
     'hdwallets': '1'
     }

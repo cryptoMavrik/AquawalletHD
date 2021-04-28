@@ -9,7 +9,7 @@ AQUAWALLETHD is simple GUI wallet solution for Aquachain with HD wallet support 
 
 ## Windows
 
-- From the "Releases" page, download the .zip file that corresponds with your OS.
+- From the "Releases" page, download the .zip file that corresponds with your OS
 - Unzip to a location of you choice
 - Run AquawalletHD.exe
 ___

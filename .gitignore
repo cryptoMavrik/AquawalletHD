@@ -1,8 +1,10 @@
+*.spec
 *.pyc
 *.ini
 *.key
 *.wallet
 contacts.json
+recent.json
 src
 *cache
 build

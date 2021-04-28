@@ -24,7 +24,7 @@ ___
 
 ___
 
-# Coming up...
+# Coming soon...
 
 - Smart Contract functionality
 - Ability to browse an addresses' transactions (similar to most block explorers)

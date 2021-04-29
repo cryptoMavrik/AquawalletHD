@@ -13,7 +13,10 @@ AQUAWALLETHD is simple GUI wallet solution for Aquachain with HD wallet support 
 - Unzip to a location of you choice
 - Run AquawalletHD.exe
 ___
-___
+## Important
+# Warning
+
+As of now, seed phrases that are saved, imported, and create by the application are stored in plain text in the keystore. PROTECT YOUR SEED KEY. Use these features AT YOUR OWN RISK. Do not store seed phrase on a system that could in any way have compromised security and take great care managing these files.
 
 # Known Issues
 
@@ -26,6 +29,7 @@ ___
 
 # Coming soon...
 
+- Seed phrase storage encryption algorithm
 - Smart Contract functionality
 - Ability to browse an addresses' transactions (similar to most block explorers)
 - Mobile release

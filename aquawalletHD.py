@@ -1237,10 +1237,15 @@ class Aquachain(MDBoxLayout):
 
         elif len(query) == 66:
             # tx
-            tx = self.aqua.gettransaction(query)
-            if 'from' in tx:
+            try:
+                tx = self.aqua.gettransaction(query)
                 self.popup_tx(tx)
                 return
+            except Exception as e:
+                Snackbar(text="Tx invalid or Block is pending", duration=1).show()
+                log.debug("block not found: %s", e)
+                return
+
         elif len(query) < 12:
             # maybe block number
             try:

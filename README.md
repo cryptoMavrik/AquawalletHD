@@ -21,6 +21,7 @@ ___
 # Known Issues
 
 - Can't use IPC if using HTTP initially
+- Application will crash if invalid wallet address is used
 - Clicking the search button does not default to the search tab on blockchain screen
 - Must restart application to adjust block limit in explorer
 - After sending Tx the snackbar to add address to contacts does not save contact properly

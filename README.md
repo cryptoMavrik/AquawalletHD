@@ -21,7 +21,8 @@ ___
 # Known Issues
 
 - Can't use IPC if using HTTP initially
-- Application will crash if invalid wallet address is used
+- Wallet will crash if invalid wallet address is used
+- Wallet will crash if there is no network connection when loading saved wallet
 - App gives no feedback when funds are insufficient for tx
 - Clicking the search button does not default to the search tab on blockchain screen
 - Must restart application to adjust block limit in explorer

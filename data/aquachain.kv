@@ -237,9 +237,9 @@
                                         padding: 0,0
                                     BoxLayout:
                                         orientation: 'vertical'
-                                        padding: dp(40)
+                                        padding: dp(20)
                                         BoxLayout:
-                                            padding: dp(15)
+                                            padding: dp(8)
                                             MDTextField:
                                                 id: send_addr
                                                 valign: 'top'
@@ -247,13 +247,16 @@
                                                 helper_text: "Not a correct address. Enter a correct wallet address."
                                                 max_text_length: 42
                                                 helper_text_mode: "on_error"
+                                                mode: "rectangle"
+
                                         BoxLayout:
-                                            padding: dp(15)
+                                            padding: dp(8)
                                             MDTextField:
                                                 id: amount
                                                 hint_text: "Amount"
                                                 helper_text: "Enter the amount you would like to send"
                                                 helper_text_mode: "on_focus"
+                                                mode: "rectangle"
                                         BoxLayout:
                                             id: passphrase
                                             padding: dp(15)

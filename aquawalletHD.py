@@ -440,6 +440,12 @@ class Aquachain(MDBoxLayout):
                           )
         content.add_widget(contents)
         def sendcoin(instance):
+            if len(to) != 42:
+                if to[:2] != "0x":
+                    Snackbar(text="Address must begin with '0x'").show()
+                    return
+                Snackbar(text="Invalid Address!").show()
+                return
             self.sendCoin(fromwallet, to, amount)
             log.info("CONFIRM")
             dialog.dismiss()
@@ -532,6 +538,12 @@ class Aquachain(MDBoxLayout):
 
     #sendcoin using rpc's unlocked wallet
     def sendCoin(self, fromwallet, to, amount):
+        if len(to) != 42:
+            if to[:2] != "0x":
+                Snackbar(text="Address must begin with '0x'").show()
+                return
+            Snackbar(text="Invalid Address!").show()
+            return
         gasprice = self.config.get(aquaconf, 'fuelprice')
         log.info("from: %s, to: %s, amount: %s", fromwallet, to, self.aqua.to_wei(amount))
         txhash = ''
